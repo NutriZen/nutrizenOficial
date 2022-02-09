@@ -10,10 +10,10 @@ document.getElementById("navBar").innerHTML = `
     <div class="collapse navbar-collapse justify-content-end jost" id="navbarNav">
         <ul class="navbar-nav" id="link-style">
             <li class="nav-item">
-                <a class="nav-link" href="home.html">Inicio</a>
+                <a class="nav-link" href="index.html">Inicio</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Nosotros</a>
+                <a class="nav-link" href="aboutus.html">Nosotros</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="contact.html">Contacto</a>
