@@ -157,4 +157,20 @@ nav{
     box-shadow: none;
 }
 
+.a-style{
+    color: #3F3F44;
+    text-decoration: none;
+}
+.a-style:hover{
+    color: #CCEABB;
+}
+
+.a-style-inverse{
+    color: #CCEABB;
+    text-decoration: none;
+}
+.a-style-inverse:hover{
+    color: #F7F7F7;
+}
+
 
