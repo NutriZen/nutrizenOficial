@@ -23,6 +23,10 @@
         <!-- Jost -->
     <!-- /Fonts -->
 
+        <!-- FooterStyle -->
+        <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+        <!-- FooterStyle -->
+
     <!-- Style css -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/icons.css">
@@ -50,40 +54,41 @@
     <div id="shoppingCart"></div>
     <!-- /Carrito de compras -->
 
+    <br><br><br><br><br>
     <!-- Contenido principal -->
     <div class="container">
-        <div class="row w-100 vh-100 align-items-center">
+        <div class="row  align-items-center">
 
             <!-- Entradas de la calculadora -->
             <div class="col-md-6 d-flex align-items-center flex-column" style="background-color: white; border-radius: 10px; padding: 50px;" data-aos="fade-up" data-aos-duration="2000">
                 <form class="jost form-group" style="width: 100%;">
                     <div class="form-row d-flex flex-row">
                         <div class="col-sm">
-                            <select id="genero" class="form-control form-style border border-0 border-bottom border-dark rounded-0"> 
+                            <select id="genero" class="form-control form-style rounded-0 jost"> 
                                 <option disabled selected>Género</option>
                                 <option>Femenino</option>
                                 <option>Masculino</option>
                             </select>
                         </div>
                         <div class="col-sm" style="padding-left: 50px;">
-                            <input type="number" id="edad" class="form-control form-style border border-0 border-bottom border-dark rounded-0" placeholder="Edad" min="1"/>
+                            <input type="number" id="edad" class="form-control form-style rounded-0 jost" placeholder="Edad" min="1"/>
                         </div>
                     </div>
 
                     <br>
                     <div class="form-row d-flex flex-row">
                         <div class="col-sm">
-                            <input type="number" id="altura" class="form-control form-style border border-0 border-bottom border-dark rounded-0" placeholder="Altura (cm)" min="1"/>
+                            <input type="number" id="altura" class="form-control form-style rounded-0 jost" placeholder="Altura (cm)" min="1"/>
                         </div>
                         <div class="col-sm" style="padding-left: 50px;">
-                            <input type="number" id="peso" class="form-control form-style border border-0 border-bottom border-dark rounded-0" placeholder="Peso (kg)" min="1"/>
+                            <input type="number" id="peso" class="form-control form-style rounded-0 jost" placeholder="Peso (kg)" min="1"/>
                         </div>
                     </div>
 
                     <br>
                     <div class="form-row d-flex flex-row">
                         <div class="col-sm">
-                            <select id="nivelDeActividad" class="form-control form-style border border-0 border-bottom border-dark rounded-0">
+                            <select id="nivelDeActividad" class="form-control form-style rounded-0 jost">
                                 <option disabled selected>Actividad diaria ℹ️</option>
                                 <option>Sedentario</option>
                                 <option>Ligero</option>
@@ -92,7 +97,7 @@
                             </select>
                         </div>
                         <div class="col-sm" style="padding-left: 50px;">
-                            <select id="intensidadAlEjercitar" class="form-control form-style border border-0 border-bottom border-dark rounded-0 form-select">
+                            <select id="intensidadAlEjercitar" class="form-control form-style rounded-0 jost">
                                 <option disabled selected>Intensidad de ejercicio ℹ️</option>
                                 <option>Ninguna</option>
                                 <option>Ligero</option>
@@ -106,10 +111,10 @@
                     <br>
                     <div class="form-row d-flex flex-row">
                         <div class="col-sm">
-                            <input type="number" id="ejercitarDiasPorSemana" class="form-control form-style border border-0 border-bottom border-dark rounded-0" placeholder="Días ejercicio por semana" min="1"/>
+                            <input type="number" id="ejercitarDiasPorSemana" class="form-control form-style rounded-0 jost" placeholder="Días ejercicio por semana" min="1"/>
                         </div>
                         <div class="col-sm" style="padding-left: 50px;">
-                            <input type="number" id="ejercitarMinutosPorDia" class="form-control form-style border border-0 border-bottom border-dark rounded-0" placeholder="Minutos de ejercicio por día" min="1"/>
+                            <input type="number" id="ejercitarMinutosPorDia" class="form-control form-style rounded-0 jost" placeholder="Minutos de ejercicio por día" min="1"/>
                         </div>
                     </div>
 
@@ -148,6 +153,11 @@
         </div>
     </div>
     <!-- /Contenido principal -->
+
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <!-- Footer -->
+    <div id="footerSection"></div>
+    <!-- Footer -->
 
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -201,6 +211,10 @@
         <!-- Mailtrap -->
             <script src="https://smtpjs.com/v3/smtp.js"></script>
         <!-- /Mailtrap -->
+
+        <!-- Footer Script -->
+            <script src="assets/js/footer.js"></script>
+            <!-- Footer Script -->
     <!-- Scripts -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
