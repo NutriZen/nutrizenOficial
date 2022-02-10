@@ -5,7 +5,7 @@ document.getElementById("modalUser").innerHTML = `
             <div class="modal-body modal-style">
                 <div class="row text-center">
                     <div class="col" id="iconsModal">
-                        <a href="#" class="nav-link">
+                        <a href="register.html" class="nav-link">
                             <span class="icon-clipboard"></span>
                         </a>
                     </div>
