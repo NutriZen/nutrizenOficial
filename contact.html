@@ -23,6 +23,10 @@
         <!-- Jost -->
     <!-- /Fonts -->
 
+    <!-- FooterStyle -->
+    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+    <!-- FooterStyle -->
+
     <!-- Style css -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/icons.css">
@@ -50,9 +54,10 @@
     <div id="shoppingCart"></div>
     <!-- /Carrito de compras -->
 
+    <br><br><br><br><br>
     <!-- Contenido principal -->
     <div class="container">
-        <div class="row w-100 vh-100 align-items-center">
+        <div class="row align-items-center">
             <div class="col-md-6 d-flex text-justify flex-column jost">
                 <h1>Contacto</h1>
                 <p style="font-size: 23px;">Si deseas consultar más información de nuestros productos y/o servicios, o tienes alguna duda al respecto, puedes contactarnos ¡estamos para ayudarte!</p>
@@ -65,34 +70,43 @@
                 <form class="jost form-group" style="width: 100%;">
                     <div class="form-row d-flex flex-row">
                         <div class="col-sm">
-                            <input type="text" id="name" class="form-control form-style form-style border border-0 border-bottom border-dark rounded-0 transparent-input" placeholder="Nombre"/>
+                            <input type="text" id="name" class="form-control form-style rounded-0 jost" placeholder="Nombre"/>
                         </div>
                         <div class="col-sm" style="padding-left: 50px;">
-                            <input type="text" id="lastName" class="form-control form-style border border-0 border-bottom border-dark rounded-0" placeholder="Apellido"/>
+                            <input type="text" id="lastName" class="form-control form-style rounded-0 jost" placeholder="Apellido"/>
                         </div>
                     </div>
 
                     <br>
                     <div class="form-row d-flex flex-row">
                         <div class="col-sm">
-                            <input type="email" id="email" class="form-control form-style border border-0 border-bottom border-dark rounded-0" placeholder="Correo electrónico"/>
+                            <input type="email" id="email" class="form-control form-style rounded-0 jost" placeholder="Correo electrónico"/>
                         </div>
                         <div class="col-sm" style="padding-left: 50px;">
-                            <input type="text" id="phone" class="form-control form-style border border-0 border-bottom border-dark rounded-0" placeholder="Teléfono" pattern="[0-9]{10}"/>
+                            <input type="text" id="phone" class="form-control form-style rounded-0 jost" placeholder="Teléfono" pattern="[0-9]{10}"/>
                         </div>
                     </div>
 
                     <br>
-                    <textarea type="text" id="message" class="form-control form-style border border-0 border-bottom border-dark rounded-0" placeholder="Mensaje" style="max-width: 100%; max-height: 250px; min-height: 200px;"></textarea>
+                    <textarea type="text" id="message" class="form-control form-style rounded-0 jost" placeholder="Mensaje" style="max-width: 100%; max-height: 250px; min-height: 200px;"></textarea>
                     
                     <br>
-                    <input class="btn bottom-style" type="submit" onclick="dataForm();"></input>
-
                 </form>
+                
+                <input class="btn bottom-style jost" type="submit" onclick="dataForm(); almacenamiento();"></input>
             </div>
         </div>
     </div>
     <!-- /Contenido principal -->
+
+    <br><br><br><br><br><br>
+    <!-- Footer -->
+    <div id="footerSection"></div>
+    <!-- Footer -->
+
+
+
+
 
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -146,6 +160,18 @@
         <!-- Mailtrap -->
             <script src="https://smtpjs.com/v3/smtp.js"></script>
         <!-- /Mailtrap -->
+
+        <!-- localForm -->
+            <script src="assets/js/localform.js"></script>
+        <!-- localForm -->
+
+        <!-- Footer Script -->
+            <script src="assets/js/footer.js"></script>
+        <!-- Footer Script -->
+
+        <!-- SweetAlert -->
+        <script src=" https://unpkg.com/sweetalert/dist/sweetalert.min.js "> </script> 
+        <!-- SweetAlert -->
     <!-- Scripts -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
