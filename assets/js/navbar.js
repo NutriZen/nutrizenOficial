@@ -21,7 +21,7 @@ document.getElementById("navBar").innerHTML = `
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">P&S</a>
                 <ul class="dropdown-menu drop-style text-center" aria-labelledby="dropdownMenu2">
-                    <li><a class="dropdown-item" href="products.html" style="font-size:20px">Productos</a></li>
+                    <li><a class="dropdown-item" href="products copy.html" style="font-size:20px">Productos</a></li>
                     <li><a class="dropdown-item" href="services.html" style="font-size:20px">Servicios</a></li>
                 </ul>
             </li>
