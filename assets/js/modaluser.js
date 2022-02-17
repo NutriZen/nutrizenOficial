@@ -10,7 +10,7 @@ document.getElementById("modalUser").innerHTML = `
                         </a>
                     </div>
                     <div class="col" id="iconsModal">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="login.html">
                             <span class="icon-enter"></span>
                         </a>
                     </div>

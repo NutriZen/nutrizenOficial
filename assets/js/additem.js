@@ -7,19 +7,23 @@ document.getElementById("modalAdd").innerHTML = `
 
                     <h4 class="text-center"><b>Agregar ítem</b></h4>
 
-                    <input type="text" id="itemName" class="form-control form-style rounded-0 jost" placeholder="Nombre"/>
+                    <input type="text" id="itemName" class="form-control jost rounded-0 input-style" placeholder="Nombre"/>
+                    <span id="messageErrorItemName"></span>
 
                     <br>
-                    <input type="text" id="itemImg" class="form-control form-style rounded-0 jost" placeholder="Imagen"/>
+                    <input type="text" id="itemImg" class="form-control jost rounded-0 input-style" placeholder="Imagen"/>
+                    <span id="messageErrorImg"></span>
 
                     <br>
-                    <input type="number" id="priceItem" class="form-control form-style rounded-0 jost" placeholder="Precio" min="1"/>
+                    <input type="number" id="priceItem" class="form-control jost rounded-0 input-style" placeholder="Precio" min="1"/>
+                    <span id="messageErrorItemPrice"></span>
 
                     <br>
-                    <textarea type="text" id="descItem" class="form-control form-style rounded-0 jost" placeholder="Descripción" style="max-width: 100%; max-height: 150px; min-height: 100px;"></textarea>
+                    <textarea type="text" id="descItem" class="form-control jost rounded-0 input-style" placeholder="Descripción" style="max-width: 100%; max-height: 150px; min-height: 100px;"></textarea>
+                    <span id="messageErrorItemDesc"></span>
                     
                     <br>
-                    <button class="bottom-style btn jost" onclick="getItem();" style="font-size: 20px;">Agregar</button>
+                    <button class="bottom-style btn jost" onclick="getItem(); allValidations();" style="font-size: 20px;">Agregar</button>
                 </div>
                 <div class="modal-footer modal-style">
                     <button type="button" class="bottom-style btn jost" data-bs-dismiss="modal" style="font-size: 20px;">Cerrar</button>
@@ -58,6 +62,67 @@ function addItem(item){
     itemsContainer.innerHTML += itemHTML;
 }
 */
+
+
+function validationItemName(){
+
+    let itemName = document.getElementById("itemName").value;
+    /*
+    */
+
+    if(itemName == ""){
+        document.getElementById("messageErrorItemName").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce el nombre del producto.<div>`;
+    }else{
+        document.getElementById("messageErrorItemName").innerHTML = "";
+    } //else
+
+}//validationItemName
+
+function validationUrlImage(){
+    
+    let itemIgm = document.getElementById("itemImg").value;
+
+    if(itemIgm == ""){
+        document.getElementById("messageErrorImg").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce el url de la imagen.<div>`;
+    }else{
+        document.getElementById("messageErrorImg").innerHTML = "";
+    } //else
+
+} //validationUrlImage
+
+function validationPrice(){
+
+    let itemPrice = document.getElementById("priceItem").value;
+
+    if(itemPrice == ""){
+        document.getElementById("messageErrorItemPrice").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce el precio del producto.<div>`;
+    }else{
+        document.getElementById("messageErrorItemPrice").innerHTML = "";
+    } //else
+
+} //validationPrice
+
+function validationDesc(){
+
+    let itemDesc = document.getElementById("descItem").value;
+
+    if(itemDesc == ""){
+        document.getElementById("messageErrorItemDesc").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce la descripcion del producto.<div>`;
+    }else{
+        document.getElementById("messageErrorItemDesc").innerHTML = "";
+    } //else
+
+} //validationDesc
+
+
+function allValidations(){
+    validationItemName();
+    validationUrlImage();
+    validationPrice();
+    validationDesc();
+} //allValidations
+
+
 
 function getItem(){
 
@@ -127,7 +192,7 @@ function addItemList(){
                         </p>
                     </div>
                     <div style="padding: 16px;">
-                        <input type="number" id="name" class="form-control form-style form-style border border-0 border-bottom border-dark rounded-0 transparent-input" min="1" max="10" value="1"/>
+                        <input type="number" id="name" class="form-control form-style form-style border border-0 border-bottom border-dark rounded-0 transparent-input jost" min="1" max="10" value="1"/>
                         <br>
                         <a href="#!" class="btn card-btn" style="width: 100%;">Agregar</a>
                     </div>
