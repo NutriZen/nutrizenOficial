@@ -1,7 +1,7 @@
 function dataForm(){
-    const name = document.getElementById("name").value;
+    const name = document.getElementById("firstName").value;
     const lastName = document.getElementById("lastName").value;
-    const msg = document.getElementById("message").value;
+    const msg = document.getElementById("msg").value;
     const phone = document.getElementById("phone").value;
     const email = document.getElementById("email").value;
 

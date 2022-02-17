@@ -30,6 +30,7 @@
     <!-- Style css -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/icons.css">
+    <link rel="stylesheet" href="assets/css/formstyle.css">
     <!-- /Style css -->
 
     <!-- AOS -->
@@ -57,49 +58,49 @@
     <br><br><br><br><br>
     <!-- Contenido principal -->
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6 d-flex text-justify flex-column jost">
+        <div class="row">
+            <div class="col-xl-6 mb-3 ">
                 <h1>Contacto</h1>
                 <p style="font-size: 23px;">Si deseas consultar más información de nuestros productos y/o servicios, o tienes alguna duda al respecto, puedes contactarnos ¡estamos para ayudarte!</p>
                 <div class="d-flex justify-content-center" data-aos="fade-left" data-aos-duration="2000">
                     <img src="assets/img/peach.png" class="img-fluid" alt="peach" style="width: 55%; opacity: 0.6;">
                 </div>
             </div>
-
-            <div class="col-md-6 d-flex align-items-center flex-column" style="background-color: white; border-radius: 10px; padding: 50px;" data-aos="fade-up" data-aos-duration="2000">
-                <form class="jost form-group" style="width: 100%;">
-                    <div class="form-row d-flex flex-row">
-                        <div class="col-sm">
-                            <input type="text" id="name" class="form-control form-style rounded-0 jost" placeholder="Nombre"/>
+            <div class="col-xl-6" style="background-color: white; border-radius: 10px; padding: 50px;" data-aos="fade-up" data-aos-duration="2000">
+                <form>
+                    <div class="row mt">
+                        <div class="col-md-6 mt-3">
+                            <input type="text" class="form-control jost rounded-0 input-style" id="firstName" aria-describedby="emailHelp" placeholder="Nombre">
                         </div>
-                        <div class="col-sm" style="padding-left: 50px;">
-                            <input type="text" id="lastName" class="form-control form-style rounded-0 jost" placeholder="Apellido"/>
+                        <div class="col-md-6 mt-3">
+                            <input type="text" class="form-control jost rounded-0 input-style" id="lastName" aria-describedby="emailHelp" placeholder="Apellido">
+                        </div>
+                        <span id="messageErrorName"></span>
+                    </div>
+                    <div class="row mt">
+                        <div class="col-md-6 mt-3">
+                            <input type="email" class="form-control jost rounded-0 input-style" id="email" placeholder="Correo electronico">
+                            <span id="messageErrorEmail"></span>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <input type="text" class="form-control jost rounded-0 input-style" id="phone" placeholder="Telefono" maxlength="10">
+                            <span id="messageErrorPhone"></span>
                         </div>
                     </div>
-
-                    <br>
-                    <div class="form-row d-flex flex-row">
-                        <div class="col-sm">
-                            <input type="email" id="email" class="form-control form-style rounded-0 jost" placeholder="Correo electrónico"/>
+                    <div class="row mt">
+                        <div class="col mt-3">
+                            <textarea type="text" class="form-control jost rounded-0 input-style" id="msg" placeholder="Mensaje" style="min-height: 150px; max-height: 300px;"></textarea>
                         </div>
-                        <div class="col-sm" style="padding-left: 50px;">
-                            <input type="text" id="phone" class="form-control form-style rounded-0 jost" placeholder="Teléfono" pattern="[0-9]{10}"/>
-                        </div>
+                        <span id="messageErrorMessage"></span>
                     </div>
-
-                    <br>
-                    <textarea type="text" id="message" class="form-control form-style rounded-0 jost" placeholder="Mensaje" style="max-width: 100%; max-height: 250px; min-height: 200px;"></textarea>
-                    
-                    <br>
                 </form>
-                
-                <input class="btn bottom-style jost" type="submit" onclick="dataForm(); almacenamiento();"></input>
+                <button type="submit" class="btn bottom-style jost w-100 mt-4" onclick="contactValidation(); dataForm(); almacenamiento();">Enviar</button>
             </div>
         </div>
     </div>
     <!-- /Contenido principal -->
 
-    <br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
     <!-- Footer -->
     <div id="footerSection"></div>
     <!-- Footer -->
@@ -115,28 +116,6 @@
     <!-- AOS -->
     <script>
         AOS.init();
-
-
-
-
-            //Validacion de formulario
-        (function() {
-            'use strict';
-            window.addEventListener('load', function() {
-                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                var forms = document.getElementsByClassName('needs-validation');
-                // Loop over them and prevent submission
-                var validation = Array.prototype.filter.call(forms, function(form) {
-                form.addEventListener('submit', function(event) {
-                    if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    }
-                    form.classList.add('was-validated');
-                }, false);
-                });
-            }, false);
-            })();
     </script>
     <!-- AOS -->
 
@@ -168,6 +147,10 @@
         <!-- Footer Script -->
             <script src="assets/js/footer.js"></script>
         <!-- Footer Script -->
+
+        <!-- Validacion de formulario -->
+            <script src="assets/js/formvalidation.js"></script>
+            <!-- Validacion de formulario -->
 
         <!-- SweetAlert -->
         <script src=" https://unpkg.com/sweetalert/dist/sweetalert.min.js "> </script> 

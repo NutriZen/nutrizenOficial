@@ -1,3 +1,8 @@
+body{
+    background-color: #F7F7F7;
+}
+
+
 /* Fonts de la pagina */
 .josefin-sans{
     font-family: 'Josefin Sans', sans-serif;
@@ -223,4 +228,9 @@ nav{
 .swal-text{
     font-family: 'Jost', sans-serif;
     font-size: 20px;
+}
+
+/* BlackColorText */
+.txt-color-black{
+    color: #3F3F44;
 }

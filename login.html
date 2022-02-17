@@ -42,7 +42,7 @@
         .backGround{
             background-image: url(assets/img/img-home-dos.jpg);
             background-repeat: no-repeat;
-            /* background-size: cover; */
+            background-size: cover;
             opacity: 0.6;
             
         }
@@ -75,47 +75,47 @@
     <!-- <br><br><br><br><br> -->
     <!-- Contenido principal -->
 
-    <div class="w-100 vh-100 position-absolute" style="top: 20%; ">
+    <div class="w-100 vh-100 position-absolute" style="top: 25%; ">
         
         <div class="row justify-content-center">
             
 
             <div class="col-xl-6" style="background-color: white; border-radius: 10px; padding: 50px; opacity: 0.85;" data-aos="fade-up" data-aos-duration="2000">
                 
-                <h1 class="text-center jost" style="color: #3F3F44;">Forma parte de nuestra familia</h1>
+                <h1 class="text-center jost" style="color: #3F3F44;">Iniciar Sesión</h1>
                 <br>
                 <form>
                     <div class="row mt">
-                        <div class="col-md-6 mt-3">
+                        <!-- <div class="col-md-6 mt-3">
                             <input type="text" class="form-control rounded-0 input-style jost" id="firstName" aria-describedby="emailHelp" placeholder="Nombre">
-                        </div>
-                        <div class="col-md-6 mt-3">
+                        </div> -->
+                        <!-- <div class="col-md-6 mt-3">
                             <input type="text" class="form-control rounded-0 input-style jost" id="lastName" aria-describedby="emailHelp" placeholder="Apellido">
-                        </div>
+                        </div> -->
                         <span id="messageErrorName"></span>
                     </div>
                     <div class="row mt">
-                        <div class="col-md-6 mt-3">
+                        <div class="col-md mt-3">
                             <input type="email" class="form-control rounded-0 input-style jost" id="email" aria-describedby="emailHelp" placeholder="Correo electrónico">
                             <span id="messageErrorEmail"></span>
                         </div>
-                        <div class="col-md-6 mt-3">
+                        <!-- <div class="col-md-6 mt-3">
                             <input type="text" class="form-control rounded-0 input-style jost" id="phone" aria-describedby="emailHelp" placeholder="Teléfono" maxlength="10">
                             <span id="messageErrorPhone"></span>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="row mt">
-                        <div class="col-md-6 mt-3">
+                        <div class="col-md mt-3">
                             <input type="password" class="form-control rounded-0 input-style jost" id="passwordOne" aria-describedby="emailHelp" placeholder="Contraseña" maxlength="20">
                         </div>
-                        <div class="col-md-6 mt-3">
+                        <!-- <div class="col-md-6 mt-3">
                             <input type="password" class="form-control rounded-0 input-style jost" id="passwordTwo" aria-describedby="emailHelp" placeholder="Confirmación" maxlength="20">
-                        </div>
+                        </div> -->
                         <span id="messageErrorPass"></span>
                     </div>
                 </form>
                 <br>
-                <button type="submit" class="btn bottom-style jost w-100 mt-4 " onclick="registerValidation(); newUser();">Registrarse</button>
+                <button type="submit" class="btn bottom-style jost w-100 mt-4 " onclick="loginValidation();">Registrarse</button>
             </div>
         </div>
     </div>
