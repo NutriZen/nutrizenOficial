@@ -24,6 +24,9 @@ function newUser(){
             icon: "success",
             button:false
         }))
+
+        setTimeout("redirectPage()", 2000); //Redirecciona la pagina en cierto tiempo / 1 seg = 1000mseg
+
     }else{
         
         swal("Debe llenar todos los campos",{
@@ -34,7 +37,8 @@ function newUser(){
 
 
     // console.log(addNewUser);
-
-
-
 }
+
+function redirectPage(){
+    window.location = "login.html";
+} //redirectPage()
