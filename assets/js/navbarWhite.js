@@ -53,3 +53,21 @@ window.onscroll = function(){
     }
 }
 */
+//Obtiene el valor de la cookies y lo muestra en pantalla
+var getCookie = document.cookie;
+var nameCookie = getCookie.substring(0,8);
+
+
+if(getCookie.length > 0){
+    if(nameCookie == "dataUser"){
+        var onlyData = getCookie.slice(9);
+        var getJson = JSON.parse(onlyData);
+        console.log(getJson);
+    }else{
+        onsole.log("error");
+    }
+}else{
+    
+    // alert("No hay cookie");
+}
+

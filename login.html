@@ -71,11 +71,11 @@
     <div id="shoppingCart"></div>
     <!-- /Carrito de compras -->
 
-    <div class="backGround vw-100 vh-100"></div>
+    <div class="backGround vw-100 vh-100 d-flex justify-content-center align-items-center"></div>
     <!-- <br><br><br><br><br> -->
     <!-- Contenido principal -->
 
-    <div class="w-100 vh-100 position-absolute" style="top: 25%; ">
+    <div class="w-100 vh-100 d-flex flex-column justify-content-center position-absolute" style="top: 0%;">
         
         <div class="row justify-content-center">
             
@@ -92,7 +92,7 @@
                         <!-- <div class="col-md-6 mt-3">
                             <input type="text" class="form-control rounded-0 input-style jost" id="lastName" aria-describedby="emailHelp" placeholder="Apellido">
                         </div> -->
-                        <span id="messageErrorName"></span>
+                        <!-- <span id="messageErrorName"></span> -->
                     </div>
                     <div class="row mt">
                         <div class="col-md mt-3">
@@ -115,16 +115,12 @@
                     </div>
                 </form>
                 <br>
-                <button type="submit" class="btn bottom-style jost w-100 mt-4 " onclick="loginValidation();">Registrarse</button>
+                <button type="submit" class="btn bottom-style jost w-100 mt-4 " onclick="loginValidation(); getUsers();">Iniciar Sesión</button>
             </div>
         </div>
     </div>
     <!-- /Contenido principal -->
 
-    <!-- <br><br><br><br><br><br><br><br><br> -->
-    <!-- Footer -->
-    <div id="footerSection"></div>
-    <!-- Footer -->
 
 
 
@@ -142,7 +138,7 @@
 
     <!-- Scripts -->
         <!-- navbar -->
-            <script src="assets/js/navbarWhite.js"></script>
+            <script src="assets/js/navbar.js"></script>
         <!-- navbar -->
 
         <!-- Shopping Cart -->
@@ -168,6 +164,10 @@
         <!-- Registro de usuarios -->
             <script src="assets/js/formregister.js"></script>
         <!-- Registro de usuarios -->
+
+        <!-- LocalStorage -->
+            <script src="assets/js/localstorage.js"></script>
+        <!-- LocalStorage -->
     <!-- Scripts -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

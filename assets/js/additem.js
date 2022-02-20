@@ -201,4 +201,41 @@ function addItemList(){
     `;
 }
 
-/* /Funcion agregar items */
+
+
+
+//Obtiene el valor de la cookies y lo muestra en pantalla
+var getCookie = document.cookie;
+if(getCookie.length > 0){
+    
+if(getJson.email == "admin.one@gmail.com"){
+    console.log("Son iguales");
+    document.getElementById("buttomAdd").innerHTML = `
+<div class="fixed-bottom d-flex justify-content-end trnasparet-style" style="margin: 20px;">
+    <button class="btn add-bottom-style" data-bs-toggle="modal" data-bs-target="#modalAddItems" >
+        <span class="icon-plus-circle-dark"></span>
+    </button>
+</div>`;
+}else{
+    document.getElementById("buttomAdd").innerHTML = "";
+}
+}else{
+    // continue;
+}
+
+/*
+if(getCookie.length > 0){
+    if(nameCookie == "dataUser"){
+        var onlyData = getCookie.slice(9);
+        var getJson = JSON.parse(onlyData);
+        console.log(getJson.email);
+    }else{
+        onsole.log("error");
+    }
+}else{
+    
+    // alert("No hay cookie");
+}
+*/
+
+
