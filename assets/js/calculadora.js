@@ -55,7 +55,7 @@ parametroIntensidadAlEjercitar = 12;
 break;
 }
 
-//BMR = Tasa metabolica basal
+//BMR =  Calculo de Tasa metabolica basal
 var BMR = genero == "masculino"  
 ? 5 + (10 * peso) + (6.25 * altura) - (5 * edad)
 : -161 + (10 * peso) + (6.25 * altura) - (5 * edad);
@@ -64,7 +64,7 @@ var redondeadoBMR = Math.round(BMR);
 var calculoActividadDiaria = parametroNivelDeActividad * redondeadoBMR;
 var promedioCaloriasDiarias = (ejercitarDiasPorSemana * ejercitarMinutosPorDia * parametroIntensidadAlEjercitar) / 7;
 
-var TDEE = Math.round(promedioCaloriasDiarias + calculoActividadDiaria); //TDEE = Gasto energetico diario
+var TDEE = Math.round(promedioCaloriasDiarias + calculoActividadDiaria); //TDEE =  Calculo de Gasto energetico diario
 
 
 let r = {
