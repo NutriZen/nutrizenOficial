@@ -1,5 +1,5 @@
 
-if (getCookie.length > 0){
+if (userData != null){
     document.getElementById("modalUser").innerHTML = `
     <div class="modal fade jost" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="opacity: 0.95;">
@@ -20,7 +20,7 @@ if (getCookie.length > 0){
 
                 <div class="row text-center">
                     <div class="col" id="iconsModal">
-                        <p class="jost" style="font-size: 20px; color: #3F3F44;">${getJson.fName} ${getJson.lName}</p>
+                        <p class="jost" style="font-size: 20px; color: #3F3F44;">${userData.fName} ${userData.lName}</p>
                     </div>
                     <div class="col" id="iconsModal">
                         <p class="jost" style="font-size: 20px; color: #3F3F44;">Cerrar Sesión</p>

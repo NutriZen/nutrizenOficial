@@ -206,19 +206,19 @@ function addItemList(){
 
 //Obtiene el valor de la cookies y lo muestra en pantalla
 var getCookie = document.cookie;
-if(getCookie.length > 0){
+if(userData !=  null){
     
-if(getJson.email == "admin.one@gmail.com"){
-    console.log("Son iguales");
-    document.getElementById("buttomAdd").innerHTML = `
-<div class="fixed-bottom d-flex justify-content-end trnasparet-style" style="margin: 20px;">
-    <button class="btn add-bottom-style" data-bs-toggle="modal" data-bs-target="#modalAddItems" >
-        <span class="icon-plus-circle-dark"></span>
-    </button>
-</div>`;
-}else{
-    document.getElementById("buttomAdd").innerHTML = "";
-}
+    if(userData.email == "admin.one@gmail.com"){
+        console.log("Son iguales");
+        document.getElementById("buttomAdd").innerHTML = `
+    <div class="fixed-bottom d-flex justify-content-end trnasparet-style" style="margin: 20px;">
+        <button class="btn add-bottom-style" data-bs-toggle="modal" data-bs-target="#modalAddItems" >
+            <span class="icon-plus-circle-dark"></span>
+        </button>
+    </div>`;
+    }else{
+        document.getElementById("buttomAdd").innerHTML = "";
+    }
 }else{
     // continue;
 }

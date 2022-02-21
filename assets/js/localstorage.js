@@ -111,3 +111,23 @@ function addDays(fecha, dias){
 function redirectPage(){
     window.location = "index.html";
 } //redirectPage()
+
+
+
+/*
+//Leer cookie
+var getCookie = document.cookie;
+console.log(getCookie);
+
+var arrayCookie = getCookie.split("; ");
+console.log(arrayCookie);
+
+for(let i = 0; i < arrayCookie.length; i++){
+    if(arrayCookie[i].indexOf("dataUser") == 0){
+        var onlyData = arrayCookie[i].slice(9)
+        var userData = JSON.parse(onlyData)
+        console.log(onlyData);
+        console.log(userData);
+    }
+}
+*/
