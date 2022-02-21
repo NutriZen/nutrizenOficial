@@ -75,5 +75,7 @@ function addItemToShoppingCart(itemTitle,itemPrice,itemImage){
     </div>
     </div>
     `
+
+
     
 }
