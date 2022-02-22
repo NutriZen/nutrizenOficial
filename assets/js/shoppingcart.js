@@ -9,5 +9,13 @@ document.getElementById("shoppingCart").innerHTML = `
     <div class="offcanvas-body d-flex justify-content-center">
         Carrito de compras
     </div>
+    <div class= "ShoppingC Container">
+    </div>
+
+    <div class="shopping-cart-total d-flex align-items-center">
+                        <p class="mb-0">Total</p>
+                        <p class="ml-4 mb-0 shoppingCartTotal">$</p>
+
+    </div>
     </div>
 `;
