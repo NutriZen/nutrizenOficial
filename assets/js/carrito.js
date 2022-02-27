@@ -19,9 +19,6 @@ addToShoppingCartButtons.forEach((addToCartButton) => {
   const itemAmount = item.querySelector('#name').value;
   const itemTotal = (itemAmount>1)?parseInt(itemPrice)* itemAmount:itemPrice;
 
-
-
-      
       var product = {
           Nombre: itemTitle,
           Precio: itemPrice,
