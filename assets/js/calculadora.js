@@ -1,7 +1,7 @@
 //PEDES IN TERRA AD SIDERA VISUS
 
 
-
+//funcion que recaba los datos y haces las operaciones
 function calcularPlanes(  genero,                 // [string] ('masculino', 'femenino')
 edad,                   // [number]
 altura,                 // [number] (en centimetros)
@@ -63,11 +63,12 @@ var BMR = genero == "masculino"
 var redondeadoBMR = Math.round(BMR);
 var calculoActividadDiaria = parametroNivelDeActividad * redondeadoBMR;
 var promedioCaloriasDiarias = (ejercitarDiasPorSemana * ejercitarMinutosPorDia * parametroIntensidadAlEjercitar) / 7;
-
+var IMC = peso/((altura/100)*(altura/100));
 var TDEE = Math.round(promedioCaloriasDiarias + calculoActividadDiaria); //TDEE = Gasto energetico diario
 
 
 let r = {
+IMC,
 DEE: TDEE,
 Planes: [
 parseInt((TDEE * 0.85)/100) * 100,
@@ -79,15 +80,19 @@ console.log("TDEE", r.DEE)
 console.log("planes 0", r.Planes[0])
 console.log("planes 1", r.Planes[1])
 
-let tdeeResult = document.getElementById('tdeeResult');
+let tdeeResult = document.getElementById('tdeeResult'); 
 let bajarResult = document.getElementById('bajarResult');
 let aumentarResult = document.getElementById('aumentarResult');
-let imcResult = document.getElementById('imcResult');
+
+let imcResult= document.getElementById('ResultIMC')
+
 
 tdeeResult.textContent = r.DEE + " Calorias"
 bajarResult.textContent = r.Planes[0] + " Calorias"
 aumentarResult.textContent = r.Planes[1] + " Calorias"
-imcResult.textContent = r.imc 
+
+imcResult.textContent = r.IMC
+
 
 }
 

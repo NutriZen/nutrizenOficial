@@ -38,10 +38,10 @@
     <!-- AOS -->
 
 
-    <title>Contacto</title>
+    <title>Services</title>
 </head>
 
-<body>
+<body onload="extraer()">
 
     <!-- Navbar -->
     <div id="navBar"></div>
@@ -133,6 +133,10 @@
                     
 
                     <p style="font-size: 20px;">
+                        Tu IMC es igual a:
+                        <span id="ResultIMC"></span>
+                    </p>
+                    <p style="font-size: 20px;">
                         Tu gasto energético diario (TDEE) es de:
                         <span id="tdeeResult"></span>
                     </p>
@@ -209,6 +213,11 @@
         <!-- Footer Script -->
             <script src="assets/js/footer.js"></script>
             <!-- Footer Script -->
+        <!--Carrito SesionStorage -->
+           <script src="/assets/js/sesionStorage.js"></script>
+        <!--Carrito SesionStorage -->
+
+
     <!-- Scripts -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
