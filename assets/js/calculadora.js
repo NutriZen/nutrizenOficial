@@ -63,12 +63,12 @@ var BMR = genero == "masculino"
 var redondeadoBMR = Math.round(BMR);
 var calculoActividadDiaria = parametroNivelDeActividad * redondeadoBMR;
 var promedioCaloriasDiarias = (ejercitarDiasPorSemana * ejercitarMinutosPorDia * parametroIntensidadAlEjercitar) / 7;
-var IMC.toFixed(2) = peso/((altura/100)*(altura/100));
+var IMC = peso/((altura/100)*(altura/100));
 var TDEE = Math.round(promedioCaloriasDiarias + calculoActividadDiaria); //TDEE = Gasto energetico diario
 
 
 let r = {
-IMC,
+IMC.toFixed(2),
 DEE: TDEE,
 Planes: [
 parseInt((TDEE * 0.85)/100) * 100,
