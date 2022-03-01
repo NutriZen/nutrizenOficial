@@ -68,7 +68,7 @@ var TDEE = Math.round(promedioCaloriasDiarias + calculoActividadDiaria); //TDEE 
 
 
 let r = {
-IMC.toFixed(2),
+IMC,
 DEE: TDEE,
 Planes: [
 parseInt((TDEE * 0.85)/100) * 100,
