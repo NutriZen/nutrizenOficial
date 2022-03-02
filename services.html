@@ -71,15 +71,18 @@
                         </select>
                     </div>
                     <div class="col-md-6 mt-3">
-                        <input type="number" class="form-control jost rounded-0 input-style" id="edad" placeholder="Edad" min="1" >
+                        <input type="number" class="form-control jost rounded-0 input-style" id="edad" placeholder="Edad" min="20" max="105">
+                        <span id="messageErrorAge"></span>
                     </div>
                 </div>
                 <div class="row mt">
                     <div class="col-md-6 mt-3">
-                        <input type="number" class="form-control jost rounded-0 input-style" id="altura" placeholder="Altura (cm)" min="1">
+                        <input type="number" class="form-control jost rounded-0 input-style" id="altura" placeholder="Altura (cm)" min="120" max="230">
+                     <span id="messageErrorheight"></span>
                     </div>
                     <div class="col-md-6 mt-3">
-                        <input type="number" class="form-control jost rounded-0 input-style" id="peso" placeholder="Peso (kg)" min="1">
+                        <input type="number" class="form-control jost rounded-0 input-style" id="peso" placeholder="Peso (kg)" min="30" max="250">
+                        <span id="messageErrorweight"></span> 
                     </div>
                 </div>
                 <div class="row mt">
@@ -105,15 +108,19 @@
                 </div>
                 <div class="row mt">
                     <div class="col-md-6 mt-3">
-                        <input type="number" class="form-control jost rounded-0 input-style" id="ejercitarDiasPorSemana"  placeholder="Días ejercicio por semana" min="1">
+                        <input type="number" class="form-control jost rounded-0 input-style" id="ejercitarDiasPorSemana"  placeholder="Días ejercicio por semana" min="1"
+                        max="7">
+                        <span id="messageErrorDaysOfExercise"></span>
                     </div>
                     <div class="col-md-6 mt-3">
-                        <input type="number" class="form-control jost rounded-0 input-style" id="ejercitarMinutosPorDia" placeholder="Minutos de ejercicio por día" min="1">
+                        <input type="number" class="form-control jost rounded-0 input-style" id="ejercitarMinutosPorDia" placeholder="Minutos de ejercicio por día" min="1"
+                        max="180">
+                        <span id="messageErrorMinutesPerDay"></span>
                     </div>
                 </div>
                 <br>
-                <button class="btn bottom-style" type="submit" onclick="getFormValues();">Calcular</button>
-
+                <button class="btn bottom-style" id="Calcular" type="submit" onclick="getFormValues();">Calcular</button>
+            </form>
             </div>
             <!-- /Entradas de la calculadora -->
 
@@ -122,12 +129,8 @@
             <div class="col-xl-6 d-flex text-center flex-column jost mt-3">
                 <h1>Calculadora</h1>
                 <p style="font-size: 23px;">Llena los datos para calcular tus calorías ideales.</p>
-              
-
                 <div class="d-flex flex-column" data-aos="fade-left" data-aos-duration="2000">
-
-                  
-                    <p style="font-size: 20px;">
+     <p style="font-size: 20px;">
                         Tu IMC es igual a:
                         <span id="ResultIMC"></span>
                     </p>
@@ -144,7 +147,6 @@
                     <p style="font-size: 20px;">
                         Para aumentar masa muscular necesitas:
                         <span id="aumentarResult"></span>
-                        
                     </p>
                 </div>
             </div>
@@ -152,6 +154,11 @@
 
 
         </div>
+
+    </div>
+    <!-- /Contenido principal -->
+
+    <br><br><br><br><br><br><br><br><br><br><br>
 
         <br><br><br>
         
@@ -168,6 +175,7 @@
     <!-- /Contenido principal -->
 
     <br><br><br><br><br>
+
     <!-- Footer -->
     <div id="footerSection"></div>
     <!-- Footer -->

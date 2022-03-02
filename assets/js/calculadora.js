@@ -65,7 +65,7 @@ var BMR = genero == "masculino"
 var redondeadoBMR = Math.round(BMR);
 var calculoActividadDiaria = parametroNivelDeActividad * redondeadoBMR;
 var promedioCaloriasDiarias = (ejercitarDiasPorSemana * ejercitarMinutosPorDia * parametroIntensidadAlEjercitar) / 7;
-var IMC = peso/((altura/100)*(altura/100));
+var IMC =Math.round (peso/((altura/100)*(altura/100)));
 var TDEE = Math.round(promedioCaloriasDiarias + calculoActividadDiaria); //TDEE = Gasto energetico diario
 
 
@@ -86,17 +86,20 @@ let tdeeResult = document.getElementById('tdeeResult');
 let bajarResult = document.getElementById('bajarResult');
 let aumentarResult = document.getElementById('aumentarResult');
 
-let imcResult = document.getElementById('ResultIMC')
+let imcResult= document.getElementById('ResultIMC')
+
+
 
 
 tdeeResult.textContent = r.DEE + " Calorias"
 bajarResult.textContent = r.Planes[0] + " Calorias"
 aumentarResult.textContent = r.Planes[1] + " Calorias"
-
 imcResult.textContent = r.IMC
 
 
+
 } //calcularPlanes()
+
 
 
 
@@ -112,6 +115,54 @@ let nivelDeActividad = document.getElementById('nivelDeActividad').value;
 let intensidadAlEjercitar = parseInt(document.getElementById('intensidadAlEjercitar').value);
 let ejercitarDiasPorSemana  = document.getElementById('ejercitarDiasPorSemana').value;
 let ejercitarMinutosPorDia = document.getElementById('ejercitarMinutosPorDia').value;
+
+
+
+  if(edad == ""){
+    document.getElementById("messageErrorAge").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce la edad</div>`;
+   }else if(edad >= 20 && edad <=105 ){
+    document.getElementById("messageErrorAge").innerHTML = "";
+   }else{
+    document.getElementById("messageErrorAge").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce una edad valida rango de 20 a 105 años.</div>`;
+   } //else
+   if(altura == ""){
+    document.getElementById("messageErrorheight").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce la altura</div>`;
+   }else if(altura >= 120 && altura <=230 ){
+    document.getElementById("messageErrorheight").innerHTML = "";
+   }else{
+    document.getElementById("messageErrorheight").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce una altura valida rango de 120 a 230 cm.</div>`;
+   } //else
+   if(peso == ""){
+    document.getElementById("messageErrorweight").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce el peso</div>`;
+   }else if(peso >= 30 && peso <=250 ){
+    document.getElementById("messageErrorweight").innerHTML = "";
+   }else{
+    document.getElementById("messageErrorweight").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce un peso valido rango de 30 a 250kg .</div>`;
+   } //else
+   if(ejercitarDiasPorSemana == ""){
+    document.getElementById("messageErrorDaysOfExercise").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce dias de la semana</div>`;
+   }else if(ejercitarDiasPorSemana >= 1 && ejercitarDiasPorSemana <=7 ){
+    document.getElementById("messageErrorDaysOfExercise").innerHTML = "";
+   }else{
+    document.getElementById("messageErrorDaysOfExercise").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce un dia valido rango de dias de la semana del 1 al 7 .</div>`;
+   } //else
+   if(ejercitarMinutosPorDia == ""){
+    document.getElementById("messageErrorMinutesPerDay").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce minutos de ejercicio por dia</div>`;
+   }else if(ejercitarMinutosPorDia >= 1 && ejercitarMinutosPorDia <=7 ){
+    document.getElementById("messageErrorMinutesPerDay").innerHTML = "";
+   }else{
+    document.getElementById("messageErrorMinutesPerDay").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce un numero valido de minutos rango de 1 al 180.</div>`;
+   } //else
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -225,3 +276,4 @@ function milNovecientos(){
   })
   .catch((err) => console.log(err));
 }//milNovecientos
+
