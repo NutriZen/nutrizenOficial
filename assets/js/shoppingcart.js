@@ -23,12 +23,11 @@ document.getElementById("shoppingCart").innerHTML = `
 <div class= "ShoppingC Container">
 </div>
 
-    <div class="shopping-cart-total d-flex align-items-center">
+    <div class="container shopping-cart-total d-flex align-items-center">
                         <h5>&nbsp&nbspTotal</h5>
                         <p class="ml-4 mb-0 shoppingCartTotal">&nbsp&nbsp$</p>
     </div>
-    <button class="btn btn-success sm-auto comprarButton" type="button" data-toggle="modal"
-                            data-target="#comprarModal" onclick="almacenamiento()">Comprar</button>
+    <button class="btn comprarButton bottom-style" type="button" data-toggle="modal" data-target="#comprarModal" onclick="almacenamiento()" style="border: solid 40px #3F3F44;">Comprar</button>
     </div>
     </div>
     </div>
