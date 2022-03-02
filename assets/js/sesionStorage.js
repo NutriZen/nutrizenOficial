@@ -1,11 +1,10 @@
 
 var Producto = JSON.parse(sessionStorage.getItem("Carrito"));
-const shoppingCartItemsContainer = document.querySelector('.ShoppingC');
+var shoppingCartItemsContainer = document.querySelector('.ShoppingC');
 var nombre = "";
 var precio = "";
 var url= "";
 var cantidad="";
-
 
 
 function extraer(){
@@ -17,14 +16,15 @@ for (var i = 0; i< Producto.length;i++){
    url= Producto[i].product.Url_Imagen;
    cantidad=Producto[i].product.Cantidad;
 
-    addItemToShoppingCart(nombre,url,cantidad,precio)
 
 
+    addItemToShoppingCart2(nombre,url,cantidad,precio)
   }
+
 }
 
 
-function addItemToShoppingCart(itemTitle,itemImage,itemAmount,itemTotal) {
+function addItemToShoppingCart2(itemTitle,itemImage,itemAmount,itemTotal) {
     const shoppingCartRow=document.createElement('div');
     const shoppingCartContent =  `
     <div class="row container">
@@ -38,11 +38,12 @@ function addItemToShoppingCart(itemTitle,itemImage,itemAmount,itemTotal) {
         <input type="number" id="name" class="form-control form-style form-style border border-0 border-bottom border-dark rounded-0 transparent-input jost" min="1" max="10" value=${itemAmount} name="name">
     </div>
     <div class="col-sm-2">
-        <h6><b>$${itemTotal}</b></h6>
+        <h6 id="PriceCart"><b>$${itemTotal}</b></h6>
     </div>  
     </div>`;
 
    shoppingCartRow.innerHTML = shoppingCartContent;
    shoppingCartItemsContainer.append(shoppingCartRow);
  
+
 }
