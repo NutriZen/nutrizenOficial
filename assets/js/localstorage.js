@@ -1,20 +1,36 @@
 
+
+/*
 //Se obtienen los valores de los imputs y se valida informacion
 function getUsers(){
+
     var userEmail = document.getElementById("email").value
     var userPass = document.getElementById("passwordOne").value
 
     if(userEmail.length > 0 && userPass.length > 0){
-        // console.log(userEmail + " " + userPass);
-        existingUser(userEmail, userPass);
+
+        fetch('../../assets/js/userdb.json')
+        .then((respuesta) => respuesta.json())
+        .then(fakeDatos => {
+            
+            fakeDatos.forEach(element => {
+                existingUser(userEmail, userPass, element);
+            });
+        
+        })
+        .catch((err) => console.log(err));
+        //existingUser(userEmail, userPass);
     }else{
         swal("Debe llenar todos los campos",{
             icon: "error",
-            button: false
+            button: false,
+            timer: 1000,
         });
-    }
+    }//else
 
-}
+}//getUsers
+
+//Metodo implementado desde el local storage
 
 //class Usuario
 function userData(firstName, lastName, e_mail, password){
@@ -22,8 +38,6 @@ function userData(firstName, lastName, e_mail, password){
     this.lastName = lastName;
     this.email = e_mail;
     this.password = password;
-
-    
 } //class userData
 
 //Se crean los objetos de los usuarios
@@ -51,25 +65,105 @@ localStorage.setItem(
 localStorage.setItem(
     4, JSON.stringify(adminOne)
 );
+*/
 
-function existingUser(email, pass){
 
-    var user; //Almacena los datos del objeto
-    var localTam = localStorage.length; //Determina el tamaño de los elementos dentro de localStorage
+function loginUser(){
+    //obtiene los valores de los inputs
+    var userEmail = document.getElementById("email").value
+    var userPass = document.getElementById("passwordOne").value;
+    //Imprime en consola los valores obtenidos
+    console.log(userEmail + " " + userPass);
+    
+    //Almacena en un objeto los valores obtenidos
+    var dataUser = {email: userEmail, password: userPass}
 
-    for(let i = 1; i <= localTam; i++){
-        user = JSON.parse(localStorage.getItem(i));
+    //Imprime en consola los valores en formato JSON
+    console.log(JSON.stringify(dataUser))
+
+    //Fetch con metodo post que compara los datos ingresadps
+    fetch("http://localhost:8081/api/login/", {
+    method: 'POST', // or 'PUT'
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(dataUser),
+    })
+    .then(response => response.text())
+    .then(dataUser => {
+
+        console.log('Success:', dataUser);
+
+
+        if(dataUser == "true"){
+            //console.log("vientos")
+            document.getElementById("userPassIncorrect").innerHTML = "";
+            document.getElementById("userNoRegister").innerHTML = "";
+            addUserCookies(userEmail);
+        }else{
+            //console.log("novientos");
+            document.getElementById("userPassIncorrect").innerHTML = `
+            <p class="text-center" style="border: solid 2px #FF6464; border-radius: 10px; color: #FF6464; font-size: 18px;">Email o contraseña incorrectos</p>`
+            document.getElementById("userNoRegister").innerHTML = `<br><div class="text-center" style="font-size:18px">¿Quieres formar parte de nuestra familia? <a class="register-here" href="register.html">Registrate aquí</a></div>
+            <hr>`
+        }
+
+
+    })
+    .catch((error) => {
+    console.error('Error:', error);
+    });
+
+};
+
+
+function addUserCookies(email){
+    var arrayEmail = email.split("@");
+    var onlyEmail = arrayEmail[0];
+    //console.log(arrayEmail);
+    //console.log(onlyEmail);
+
+    //Alerta de bienvenida
+    swal("Bienvenido de vuelta",{
+        icon: "success",
+        button:false,
+        timer: 1000
+    })
+
+    var d = new Date(); //Obtiene la fecha actual
+
+    var jsonCookie = "dataUser";
+
+    //Almacena en cookies el objeto email
+    document.cookie = `${jsonCookie} = ${JSON.stringify(onlyEmail)}; expires = ${addDays(d, 15)};`
+
+    setTimeout("redirectPage()", 1000); //Redirecciona la pagina en cierto tiempo / 1 seg = 1000mseg
+
+}//addUserCookies
+
+
+
+
+/*
+function existingUser(email, pass, userElement){
+
+
+    //console.log(userElement);
+    //var userElementTam = userElement.length;
+    //var user; //Almacena los datos del objeto
+    //var localTam = localStorage.length; //Determina el tamaño de los elementos dentro de localStorage
+
+    //for(let i = 0; i <= userElementTam; i++){
+        //user = JSON.parse(localStorage.getItem(i));
         // console.log(user);
 
-        if(email == user.email && pass == user.password){
-            console.log("El correo electronico: '"+ email + "' es igual a '" + user.email + "'");
-            console.log("La contraseña '" + pass + "' es igual a '" + user.password + "'");
-
-            
+        if(email == userElement.email && pass == userElement.password){
+            console.log("El correo electronico: '"+ email + "' es igual a '" + userElement.email + "'");
+            console.log("La contraseña '" + pass + "' es igual a '" + userElement.password + "'");
 
             var validUser = {
-                'fName': user.firstName,
-                'lName': user.lastName,
+                'fName': userElement.first_name,
+                'lName': userElement.last_name,
                 'email': email
             } //validUser
 
@@ -83,23 +177,27 @@ function existingUser(email, pass){
             //Alerta de bienvenida
             swal("Bienvenido de vuelta",{
                 icon: "success",
-                button:false
+                button:false,
+                timer: 1000
             })
 
             setTimeout("redirectPage()", 1000); //Redirecciona la pagina en cierto tiempo / 1 seg = 1000mseg
 
-        }else if(i == localTam && pass != user.password){
+        }else if(pass != userElement.password && email == userElement.email){
 
             document.getElementById("messageErrorPass").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Contraseña incorrecta</div>`;
+            document.getElementById("passwordOne").value = "";
 
-        }else{
-            continue;
-            console.log("No te has registrado");
-        } //else
+        }else if(email != userElement.email){
+            document.getElementById("userNoRegister").innerHTML = `<br><div class="text-center" style="font-size:18px">¿Quieres formar parte de nuestra familia? <a class="register-here" href="register.html">Registrate aquí</a></div>
+            <hr>`
+        }
 
-    } //for
+    //} //for
 
 } //existingUser
+
+*/
 
 // Sumara dias a la fecha actual
 function addDays(fecha, dias){
@@ -111,23 +209,3 @@ function addDays(fecha, dias){
 function redirectPage(){
     window.location = "index.html";
 } //redirectPage()
-
-
-
-/*
-//Leer cookie
-var getCookie = document.cookie;
-console.log(getCookie);
-
-var arrayCookie = getCookie.split("; ");
-console.log(arrayCookie);
-
-for(let i = 0; i < arrayCookie.length; i++){
-    if(arrayCookie[i].indexOf("dataUser") == 0){
-        var onlyData = arrayCookie[i].slice(9)
-        var userData = JSON.parse(onlyData)
-        console.log(onlyData);
-        console.log(userData);
-    }
-}
-*/

@@ -208,7 +208,7 @@ function addItemList(){
 var getCookie = document.cookie;
 if(userData !=  null){
     
-    if(userData.email == "admin.one@gmail.com"){
+    if(userData == "admin.one"){
         console.log("Son iguales");
         document.getElementById("buttomAdd").innerHTML = `
     <div class="fixed-bottom d-flex justify-content-end trnasparet-style" style="margin: 20px;">
