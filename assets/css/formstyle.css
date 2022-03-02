@@ -8,7 +8,7 @@
 .input-style:focus{
     outline: none;
     box-shadow: none;
-    border-bottom: solid 3px #CCEABB;
+    border-bottom: solid 3px #7FCD91;
 }
 
 .input-style-error{

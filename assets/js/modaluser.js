@@ -20,7 +20,7 @@ if (userData != null){
 
                 <div class="row text-center">
                     <div class="col" id="iconsModal">
-                        <p class="jost" style="font-size: 20px; color: #3F3F44;">${userData.fName} ${userData.lName}</p>
+                        <p class="jost" style="font-size: 20px; color: #3F3F44;">${userData}</p>
                     </div>
                     <div class="col" id="iconsModal">
                         <p class="jost" style="font-size: 20px; color: #3F3F44;">Cerrar Sesión</p>

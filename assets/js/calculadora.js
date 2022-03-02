@@ -1,7 +1,9 @@
 //PEDES IN TERRA AD SIDERA VISUS
 
 
+
 //funcion que recaba los datos y haces las operaciones
+
 function calcularPlanes(  genero,                 // [string] ('masculino', 'femenino')
 edad,                   // [number]
 altura,                 // [number] (en centimetros)
@@ -91,10 +93,14 @@ tdeeResult.textContent = r.DEE + " Calorias"
 bajarResult.textContent = r.Planes[0] + " Calorias"
 aumentarResult.textContent = r.Planes[1] + " Calorias"
 
+
+} //calcularPlanes()
+=======
 imcResult.textContent = r.IMC
 
 
 }
+
 
 function getFormValues(){
 let edad = document.getElementById('edad').value;
