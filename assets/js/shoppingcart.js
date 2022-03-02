@@ -10,7 +10,7 @@ document.getElementById("shoppingCart").innerHTML = `
     <div class="col-sm-3">
      <h6>Producto</h6>
      </div>
-     <div class="col-sm-4">
+     <div class="col-sm-3">
      <h6></h6>
      </div>
      <div class= "col-sm-3">
@@ -18,17 +18,24 @@ document.getElementById("shoppingCart").innerHTML = `
     </div>
     <div class="col-sm-2">
     <h6>Precio</h6>
-    </div>  
+    </div> 
+    <div class="col-sm-1">
+    </div> 
     </div>
 <div class= "ShoppingC Container">
 </div>
 
-    <div class="shopping-cart-total d-flex align-items-center">
-                        <h5>&nbsp&nbspTotal</h5>
-                        <p class="ml-4 mb-0 shoppingCartTotal">&nbsp&nbsp$</p>
+    <div class="row shopping-cart-total d-flex align-items-center container">
+    <div class="col-sm-2">
+         <h5>&nbsp&nbspTotal</h5>
     </div>
-    <button class="btn btn-success sm-auto comprarButton" type="button" data-toggle="modal"
-                            data-target="#comprarModal" onclick="almacenamiento()">Comprar</button>
+    <div class="col-sm-1">
+        <p class="ml-2 mb-0 shoppingCartTotal">&nbsp&nbsp$</p>
+    </div>
+    <div class="row container">
+    <div class="col-sm-12">
+    <button class="btn btn-success sm-auto comprarButton" type="button" data-toggle="modal" data-target="#comprarModal">Comprar</button>
+    </div>
     </div>
     </div>
     </div>
