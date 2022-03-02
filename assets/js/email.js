@@ -18,16 +18,29 @@ function dataForm(){
         }).then(
             message => (swal("Mensaje enviado",{
                 icon: "success",
-                button:false
+                button:false,
+                timer: 2000,
             }))
         );
+
+        setTimeout("redirectPage()", 2000);
         
     }else{
         // alert("Debe llenar todos los campos");
         swal("Debe llenar todos los campos",{
             icon: "error",
-            button: false
+            button: false,
+            timer: 1000,
+            
         });
     }
 
 }
+
+function redirectPage(){
+    document.getElementById("firstName").value = "";
+    document.getElementById("lastName").value = "";
+    document.getElementById("msg").value = "";
+    document.getElementById("phone").value = "";
+    document.getElementById("email").value = "";
+} //redirectPage()

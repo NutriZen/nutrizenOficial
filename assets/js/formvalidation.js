@@ -91,6 +91,10 @@
 
         }validationMessage
         
+
+
+        document.getElementById("register").addEventListener("click", registerValidation);
+
         //Agrupa las funciones de validacion de registro
         function registerValidation(){
             validationFullName();
@@ -115,6 +119,11 @@
 
             if(pass == ""){
                 document.getElementById("messageErrorPass").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce tu contraseña.</div>`;
+                swal("Debe llenar todos los campos",{
+                    icon: "error",
+                    button: false,
+                    timer: 1000,
+                });
             }else{
                 document.getElementById("messageErrorPass").innerHTML = "";
             }

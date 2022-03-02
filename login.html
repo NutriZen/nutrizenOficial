@@ -84,6 +84,7 @@
                 
                 <h1 class="text-center jost" style="color: #3F3F44;">Iniciar Sesión</h1>
                 <br>
+                <span id="userPassIncorrect"></span>
                 <form>
                     <div class="row mt">
                         <!-- <div class="col-md-6 mt-3">
@@ -114,8 +115,8 @@
                         <span id="messageErrorPass"></span>
                     </div>
                 </form>
-                <br>
-                <button type="submit" class="btn bottom-style jost w-100 mt-4 " onclick="loginValidation(); getUsers();">Iniciar Sesión</button>
+                <span id="userNoRegister"></span>
+                <button type="button" id="login" class="btn bottom-style jost w-100 mt-4 " onclick="loginValidation();loginUser();">Iniciar Sesión</button>
             </div>
         </div>
     </div>
