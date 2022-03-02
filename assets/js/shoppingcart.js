@@ -26,7 +26,6 @@ document.getElementById("shoppingCart").innerHTML = `
 </div>
 
 <<<<<<< HEAD
-<<<<<<< HEAD
     <div class="row shopping-cart-total d-flex align-items-center container">
     <div class="col-sm-2">
          <h5>&nbsp&nbspTotal</h5>
@@ -39,17 +38,12 @@ document.getElementById("shoppingCart").innerHTML = `
     <button class="btn btn-success sm-auto comprarButton" type="button" data-toggle="modal" data-target="#comprarModal">Comprar</button>
     </div>
 =======
-=======
->>>>>>> 7969d7a64dd3f8f665aec2e9f88d02576883946f
     <div class="container shopping-cart-total d-flex align-items-center">
                         <h5>&nbsp&nbspTotal</h5>
                         <p class="ml-4 mb-0 shoppingCartTotal">&nbsp&nbsp$</p>
     </div>
     <button class="btn comprarButton bottom-style" type="button" data-toggle="modal" data-target="#comprarModal" onclick="almacenamiento()" style="border: solid 40px #3F3F44;">Comprar</button>
-<<<<<<< HEAD
 >>>>>>> c09b337c020c69be94ed879d25bbc8e6a08d767c
-=======
->>>>>>> 7969d7a64dd3f8f665aec2e9f88d02576883946f
     </div>
     </div>
     </div>
