@@ -38,10 +38,10 @@
     <!-- AOS -->
 
 
-    <title>Contacto</title>
+    <title>Services</title>
 </head>
 
-<body>
+<body onload="extraer()">
 
     <!-- Navbar -->
     <div id="navBar"></div>
@@ -122,7 +122,15 @@
             <div class="col-xl-6 d-flex text-center flex-column jost mt-3">
                 <h1>Calculadora</h1>
                 <p style="font-size: 23px;">Llena los datos para calcular tus calorías ideales.</p>
+              
+
                 <div class="d-flex flex-column" data-aos="fade-left" data-aos-duration="2000">
+
+                  
+                    <p style="font-size: 20px;">
+                        Tu IMC es igual a:
+                        <span id="ResultIMC"></span>
+                    </p>
                     <p style="font-size: 20px;">
                         Tu gasto energético diario (TDEE) es de:
                         <span id="tdeeResult"></span>
@@ -136,6 +144,7 @@
                     <p style="font-size: 20px;">
                         Para aumentar masa muscular necesitas:
                         <span id="aumentarResult"></span>
+                        
                     </p>
                 </div>
             </div>
@@ -143,10 +152,20 @@
 
 
         </div>
+        
+
+      
+
+        
+    <div style="text-align: center; padding-top: 1cm;" id="dieta"  ></div><br><br>
+
+
+ 
+    
     </div>
     <!-- /Contenido principal -->
 
-    <br><br><br><br><br><br><br><br><br><br><br>
+
     <!-- Footer -->
     <div id="footerSection"></div>
     <!-- Footer -->
@@ -189,6 +208,11 @@
         <!-- Footer Script -->
             <script src="assets/js/footer.js"></script>
             <!-- Footer Script -->
+        <!--Carrito SesionStorage -->
+           <script src="/assets/js/sesionStorage.js"></script>
+        <!--Carrito SesionStorage -->
+
+
     <!-- Scripts -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
