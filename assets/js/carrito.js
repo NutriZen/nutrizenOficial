@@ -1,8 +1,6 @@
 const addToShoppingCartButtons = document.querySelectorAll('.addToCart');
 var carrito=[];
 
-
-
 addToShoppingCartButtons.forEach((addToCartButton) => {
     addToCartButton.addEventListener('click', addToCartClicked);
   });
@@ -98,7 +96,21 @@ var Producto = JSON.parse(sessionStorage.getItem("Carrito"));
 
 
 function removeShoppingCartItem(event) {
+  Producto = JSON.parse(sessionStorage.getItem("Carrito"));
   const buttonClicked = event.target;
+  let n = buttonClicked.closest('.shoppingCartItem').getElementsByClassName('card-title')[0];
+  if(Producto.length==1){
+    Producto=[];
+    sessionStorage.setItem('Carrito',JSON.stringify(Producto));
+  }
+  console.log(n.textContent);
+  for (var i = 0; i< Producto.length;i++){
+     if(Producto[i].product.Nombre == n.textContent){
+      Producto.splice(i,1);
+      sessionStorage.setItem('Carrito',JSON.stringify(Producto));
+      break;
+     }
+  }
   buttonClicked.closest('.shoppingCartItem').remove();
   updateShoppingCartTotal();
   //sessionStorage.removeItem('Carrito');
