@@ -69,7 +69,6 @@
                             <option>Femenino</option>
                             <option>Masculino</option>
                         </select>
-                        <span id="messageErrorGender"></span> 
                     </div>
                     <div class="col-md-6 mt-3">
                         <input type="number" class="form-control jost rounded-0 input-style" id="edad" placeholder="Edad" min="20" max="105">
@@ -89,24 +88,22 @@
                 <div class="row mt">
                     <div class="col-md-6 mt-3">
                         <select id="nivelDeActividad" class="form-control form-style rounded-0 jost">
-                            <option disabled selected>Actividad diaria</option>
+                            <option disabled selected>Actividad diaria ℹ️</option>
                             <option>Sedentario</option>
                             <option>Ligero</option>
                             <option>Activo</option>
                             <option>Muy activo</option>
                         </select>
-                        <span id="messageErrorActivity"></span> 
                     </div>
                     <div class="col-md-6 mt-3">
                         <select id="intensidadAlEjercitar" class="form-control form-style rounded-0 jost">
-                            <option disabled selected>Intensidad de ejercicio</option>
+                            <option disabled selected>Intensidad de ejercicio ℹ️</option>
                             <option>Ninguna</option>
                             <option>Ligero</option>
                             <option>Moderado</option>
                             <option>Dificil</option>
                             <option>Intenso</option>
                         </select>
-                        <span id="messageErrorIntensity"></span> 
                     </div>
                 </div>
                 <div class="row mt">
@@ -133,7 +130,7 @@
                 <h1>Calculadora</h1>
                 <p style="font-size: 23px;">Llena los datos para calcular tus calorías ideales.</p>
                 <div class="d-flex flex-column" data-aos="fade-left" data-aos-duration="2000">
-                <p style="font-size: 20px;">
+     <p style="font-size: 20px;">
                         Tu IMC es igual a:
                         <span id="ResultIMC"></span>
                     </p>
@@ -158,21 +155,26 @@
 
         </div>
 
-        <br><br><br><br>
-
-        <!-- Cards Diestas -->
-        <span id="tituloDieta"></span>
-        <br>
-        <div class="row" id="dieta"></div>
-        <!-- Cards Dietas -->
-
     </div>
     <!-- /Contenido principal -->
 
-    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br>
+
+        <br><br><br>
+        
+
+      
+
+        
+    <div class="row" id="dieta"></div><br><br>
 
 
+ 
     
+    </div>
+    <!-- /Contenido principal -->
+
+    <br><br><br><br><br>
 
     <!-- Footer -->
     <div id="footerSection"></div>
@@ -215,14 +217,9 @@
 
         <!-- Footer Script -->
             <script src="assets/js/footer.js"></script>
-        <!-- Footer Script -->
-        
-        <!-- SweetAlert -->
-        <script src=" https://unpkg.com/sweetalert/dist/sweetalert.min.js "> </script> 
-        <!-- SweetAlert -->
-
+            <!-- Footer Script -->
         <!--Carrito SesionStorage -->
-            <script src="/assets/js/sesionStorage.js"></script>
+           <script src="/assets/js/sesionStorage.js"></script>
         <!--Carrito SesionStorage -->
 
 
