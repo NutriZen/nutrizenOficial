@@ -35,33 +35,7 @@ document.getElementById("modalAdd").innerHTML = `
 /* /Modal agregar item */
 
 
-/* Funcion agregar items */
-/*
-function addItem(item){
-    const itemHTML = `
-    <div class="col-lg-3" data-aos="fade-up" data-aos-duration="2000" style="padding-bottom: 25px;">
-                <div class="card card-style jost border border-0">
-                    <img src="${item.img}" class="card-img-top"
-                        alt="Fissure in Sandstone" />
-                    <div class="card-body">
-                        <h4 class="card-title text-justify"><b>${item.name}</b></h4>
-                        <h5>$${item.price}</h5>
-                        <p class="card-text text-justify">
-                            ${item.desc}
-                        </p>
-                    </div>
-                    <div style="padding: 16px;">
-                        <input type="number" id="name" class="form-control form-style form-style border border-0 border-bottom border-dark rounded-0 transparent-input" min="1" max="10" value="1"/>
-                        <br>
-                        <a href="#!" class="btn card-btn" style="width: 100%;">Agregar</a>
-                    </div>
-                </div>
-            </div>
-    `;
-    const itemsContainer = document.getElementById("list-items");
-    itemsContainer.innerHTML += itemHTML;
-}
-*/
+
 
 
 function validationItemName(){
@@ -126,13 +100,6 @@ function allValidations(){
 
 function getItem(){
 
-    function ItemList(itemName, itemImg, itemPrice, itemDesc){
-        this.itemName = itemName;
-        this.itemImg = itemImg;
-        this.itemPrice = itemPrice;
-        this.itemDesc = itemDesc;
-    } //ItemList
-
     // Obtenemos los datos del formulario
     var name = document.getElementById("itemName").value;
     var img = document.getElementById("itemImg").value;
@@ -141,29 +108,49 @@ function getItem(){
 
 
     if(name.length>0 && img.length>0 && price.length>0 && descripcion.length>0){
-        newItem = new ItemList(name, img, price, descripcion);
-        
-        addItemList();
-    }else{
-        // alert("Debe llenar todos los campos");
-        swal("Debe llenar todos los campos",{
-            icon: "error",
-            button: false
-        });
-    }
 
-    /*
-    if(name.length > 0 && img.length > 0 && price.length > 0 && descripcion.length > 0) {
-        addItem({'name': name,
-            'img': img,
-            'price': price,
-            'desc': descripcion
-        });
-    }else{
-        alert("Debe llenar todos los campos")
-    }
-    */
-}
+        const addNewItem = {nombre: name, descripcion: descripcion, url_imagen: img, precio: price}
+
+        fetch('http://localhost:8081/api/productos/', {
+            method: "POST", // or 'PUT'
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(addNewItem),
+            })
+            .then((response) => response.text())
+            .then((addNewItem) => {
+
+                if(addNewItem == ""){
+                    swal("Producto agregado",{
+                        icon: "success",
+                        button:false
+                    })
+                    setTimeout("redirectPage()", 2000); //Redirecciona la pagina en cierto tiempo / 1 seg = 1000mseg
+                }
+
+                // console.log("Success:", typeof(addNewUser));
+                // console.log("probando" + addNewUser);
+
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+                console.log("")
+            });
+                
+            }else{
+                // alert("Debe llenar todos los campos");
+                swal("Debe llenar todos los campos",{
+                    icon: "error",
+                    button: false,
+                    timer: 2000
+                });
+            }
+}//getItem
+
+function redirectPage(){
+    window.location = "products copy.html";
+} //redirectPage()
 
 var dataBase = [];
 
@@ -174,34 +161,8 @@ function addItemList(){
     });
     dataBase.push(newItem);
     console.log(dataBase);
-    /*
-    var dbJson = JSON.stringify(dataBase);
-    localStorage.setItem('myArray', dbJson);
-    console.log(dbJson);
-    */
-    document.getElementById("list-items").innerHTML += `
-    <div class="col-lg-3" data-aos="fade-up" data-aos-duration="2000" style="padding-bottom: 25px;">
-                <div class="card card-style jost border border-0">
-                    <img src="${newItem.itemImg}" class="card-img-top"
-                        alt="Fissure in Sandstone" />
-                    <div class="card-body">
-                        <h4 class="card-title text-justify"><b>${newItem.itemName}</b></h4>
-                        <h5>$${newItem.itemPrice}</h5>
-                        <p class="card-text text-justify">
-                            ${newItem.itemDesc}
-                        </p>
-                    </div>
-                    <div style="padding: 16px;">
-                        <input type="number" id="name" class="form-control form-style form-style border border-0 border-bottom border-dark rounded-0 transparent-input jost" min="1" max="10" value="1"/>
-                        <br>
-                        <a href="#!" class="btn card-btn" style="width: 100%;">Agregar</a>
-                    </div>
-                </div>
-            </div>
-    `;
+
 }
-
-
 
 
 //Obtiene el valor de la cookies y lo muestra en pantalla
@@ -222,20 +183,3 @@ if(userData !=  null){
 }else{
     // continue;
 }
-
-/*
-if(getCookie.length > 0){
-    if(nameCookie == "dataUser"){
-        var onlyData = getCookie.slice(9);
-        var getJson = JSON.parse(onlyData);
-        console.log(getJson.email);
-    }else{
-        onsole.log("error");
-    }
-}else{
-    
-    // alert("No hay cookie");
-}
-*/
-
-
