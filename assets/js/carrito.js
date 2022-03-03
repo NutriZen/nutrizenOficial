@@ -103,7 +103,7 @@ function updateShoppingCartTotal() {
   };
   
   // Petición HTTP
-  fetch("http://localhost:8081/api/productos/", options)
+  fetch("/api/productos/", options)
     .then(response => response.json())
     .then(data => {
 

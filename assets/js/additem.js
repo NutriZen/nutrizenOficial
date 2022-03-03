@@ -111,7 +111,7 @@ function getItem(){
 
         const addNewItem = {nombre: name, descripcion: descripcion, url_imagen: img, precio: price}
 
-        fetch('http://localhost:8081/api/productos/', {
+        fetch('/api/productos/', {
             method: "POST", // or 'PUT'
             headers: {
                 "Content-Type": "application/json",

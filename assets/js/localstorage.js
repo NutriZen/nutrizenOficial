@@ -82,7 +82,7 @@ function loginUser(){
     console.log(JSON.stringify(dataUser))
 
     //Fetch con metodo post que compara los datos ingresadps
-    fetch("http://localhost:8081/api/login/", {
+    fetch("/api/login/", {
     method: 'POST', // or 'PUT'
     headers: {
         'Content-Type': 'application/json',
