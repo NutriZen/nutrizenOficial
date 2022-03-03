@@ -95,8 +95,7 @@ function updateShoppingCartTotal() {
   shoppingCartTotal.innerHTML = `$${total.toFixed(2)}`;
 }
 
-    }
-  }*/
+
 
 
   const options = {
