@@ -33,9 +33,9 @@ document.getElementById("shoppingCart").innerHTML = `
         <p class="ml-2 mb-0 shoppingCartTotal">&nbsp&nbsp$</p>
     </div>
     <div class="row container">
-    <div class="col-sm-12">
-    <button class="btn comprarButton bottom-style" type="button" data-toggle="modal"
-    data-target="#comprarModal" >Comprar</button>
+
+    <div class="d-flex justify-content-center">
+
     </div>
     </div>
     </div>
