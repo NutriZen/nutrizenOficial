@@ -112,129 +112,85 @@ let peso = document.getElementById('peso').value;
 let altura = document.getElementById('altura').value;
 let genero = document.getElementById('genero').value;
 let nivelDeActividad = document.getElementById('nivelDeActividad').value;
-let intensidadAlEjercitar = document.getElementById('intensidadAlEjercitar').value;
-//let intensidadAlEjercitar = parseInt(document.getElementById('intensidadAlEjercitar').value);
+let intensidadAlEjercitar = parseInt(document.getElementById('intensidadAlEjercitar').value);
 let ejercitarDiasPorSemana  = document.getElementById('ejercitarDiasPorSemana').value;
 let ejercitarMinutosPorDia = document.getElementById('ejercitarMinutosPorDia').value;
-
-console.log("Intensidad " + intensidadAlEjercitar);
 
 
 
   if(edad == ""){
-    document.getElementById("messageErrorAge").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce la edad.</div>`;
+    document.getElementById("messageErrorAge").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce la edad</div>`;
    }else if(edad >= 20 && edad <=105 ){
     document.getElementById("messageErrorAge").innerHTML = "";
    }else{
-    document.getElementById("messageErrorAge").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce una edad válida rango de 20 a 105 años.</div>`;
-    document.getElementById("edad").value = "";
+    document.getElementById("messageErrorAge").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce una edad valida rango de 20 a 105 años.</div>`;
    } //else
    if(altura == ""){
-    document.getElementById("messageErrorheight").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce la altura.</div>`;
+    document.getElementById("messageErrorheight").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce la altura</div>`;
    }else if(altura >= 120 && altura <=230 ){
     document.getElementById("messageErrorheight").innerHTML = "";
    }else{
     document.getElementById("messageErrorheight").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce una altura valida rango de 120 a 230 cm.</div>`;
-    document.getElementById("altura").value = "";
    } //else
    if(peso == ""){
-    document.getElementById("messageErrorweight").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce el peso.</div>`;
+    document.getElementById("messageErrorweight").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce el peso</div>`;
    }else if(peso >= 30 && peso <=250 ){
     document.getElementById("messageErrorweight").innerHTML = "";
    }else{
-    document.getElementById("messageErrorweight").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce un peso valido rango de 30 a 250kg.</div>`;
-    document.getElementById("peso").value = "";
+    document.getElementById("messageErrorweight").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce un peso valido rango de 30 a 250kg .</div>`;
    } //else
    if(ejercitarDiasPorSemana == ""){
-    document.getElementById("messageErrorDaysOfExercise").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce días de la semana.</div>`;
+    document.getElementById("messageErrorDaysOfExercise").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce dias de la semana</div>`;
    }else if(ejercitarDiasPorSemana >= 1 && ejercitarDiasPorSemana <=7 ){
     document.getElementById("messageErrorDaysOfExercise").innerHTML = "";
    }else{
-    document.getElementById("messageErrorDaysOfExercise").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce un dia valido rango de dias de la semana del 1 al 7.</div>`;
-    document.getElementById("ejercitarDiasPorSemana").value = "";
+    document.getElementById("messageErrorDaysOfExercise").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce un dia valido rango de dias de la semana del 1 al 7 .</div>`;
    } //else
    if(ejercitarMinutosPorDia == ""){
-    document.getElementById("messageErrorMinutesPerDay").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce minutos de ejercicio por día.</div>`;
-   }else if(ejercitarMinutosPorDia >= 1 && ejercitarMinutosPorDia <=180 ){
+    document.getElementById("messageErrorMinutesPerDay").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce minutos de ejercicio por dia</div>`;
+   }else if(ejercitarMinutosPorDia >= 1 && ejercitarMinutosPorDia <=7 ){
     document.getElementById("messageErrorMinutesPerDay").innerHTML = "";
    }else{
     document.getElementById("messageErrorMinutesPerDay").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Introduce un numero valido de minutos rango de 1 al 180.</div>`;
-    document.getElementById("ejercitarMinutosPorDia").value = "";
    } //else
 
-   
-   if(genero == "Género"){
-    document.getElementById("messageErrorGender").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Selecciona tu género.</div>`;
-   }else{
-    document.getElementById("messageErrorGender").innerHTML = "";
-   }//else
-
-   if(nivelDeActividad == "Actividad diaria"){
-    document.getElementById("messageErrorActivity").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Seleccione nivel de actividad.</div>`;
-   }else{
-    document.getElementById("messageErrorActivity").innerHTML = "";
-   }//else
-
-   if(intensidadAlEjercitar == "Intensidad de ejercicio"){
-    document.getElementById("messageErrorIntensity").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Seleccione nivel de intensidad.</div>`;
-   }else{
-    document.getElementById("messageErrorIntensity").innerHTML = "";
-   }//else
-
-
-    if (
-      edad.length > 0 &&
-      peso.length > 0 &&
-      altura.length > 0 &&
-      ejercitarDiasPorSemana.length > 0 &&
-      ejercitarMinutosPorDia.length > 0 &&
-      genero != "Género" &&
-      nivelDeActividad != "Actividad diaria" &&
-      intensidadAlEjercitar != "Intensidad de ejercicio"
-    ) {
-      var imc = peso / ((altura / 100) * (altura / 100));
-      if (imc < 18.5) {
-        document.getElementById("tituloDieta").innerHTML = `
-        <div class="text-center" data-aos="fade-up" data-aos-duration="2000">
-          <h2 class="jost">TE RECOMENDAMOS SEGUIR ESTE MENÚ</h2>
-        </div>`
-        console.log("IMC " + imc.toFixed(2));
-        window.addEventListener("load", milTrecientos());
-      } else if (imc >= 18.5 && imc < 25) {
-        document.getElementById("tituloDieta").innerHTML = `
-        <div class="text-center" data-aos="fade-up" data-aos-duration="2000">
-          <h2 class="jost">TE RECOMENDAMOS SEGUIR ESTE MENÚ</h2>
-        </div>`
-        window.addEventListener("load", milSeiscientos());
-      } else if (imc > 25) {
-        document.getElementById("tituloDieta").innerHTML = `
-        <div class="text-center" data-aos="fade-up" data-aos-duration="2000">
-          <h2 class="jost">TE RECOMENDAMOS SEGUIR ESTE MENÚ</h2>
-        </div>`
-        window.addEventListener("load", milNovecientos());
-      }
-
-      calcularPlanes(
-        genero, // [string] ('masculino', 'femenino')
-        edad, // [number]
-        altura, // [number] (en centimetros)
-        peso, // [number] (en kilos)
-        nivelDeActividad,
-        intensidadAlEjercitar,
-        ejercitarDiasPorSemana,
-        ejercitarMinutosPorDia
-      );
-    }else{
-      swal("Debe llenar todos los campos",{
-      icon: "error",
-      button: false,
-      timer: 1000,
-      });
-    }
 
 
 
-}//getFormValues
+
+
+
+
+
+
+
+
+
+
+
+
+
+var imc = peso / ((altura / 100) * (altura / 100));
+if (imc < 18.5) {
+  console.log("IMC " + imc.toFixed(2));
+  window.addEventListener("load", milTrecientos());
+} else if (imc >= 18.5 && imc < 25) {
+  window.addEventListener("load", milSeiscientos());
+} else if (imc > 25) {
+  window.addEventListener("load", milNovecientos());
+}
+
+calcularPlanes(  genero,                 // [string] ('masculino', 'femenino')
+ edad,                   // [number]
+ altura,                 // [number] (en centimetros)
+ peso,                   // [number] (en kilos)
+ nivelDeActividad,
+ intensidadAlEjercitar,
+ ejercitarDiasPorSemana,
+ ejercitarMinutosPorDia
+ )
+
+}
 
 
 //Funcion que contiene e imprime el json del plan 1300
