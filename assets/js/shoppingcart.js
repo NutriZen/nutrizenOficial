@@ -25,7 +25,6 @@ document.getElementById("shoppingCart").innerHTML = `
 <div class= "ShoppingC Container">
 </div>
 
-<<<<<<< HEAD
     <div class="row shopping-cart-total d-flex align-items-center container">
     <div class="col-sm-2">
          <h5>&nbsp&nbspTotal</h5>
@@ -35,15 +34,9 @@ document.getElementById("shoppingCart").innerHTML = `
     </div>
     <div class="row container">
     <div class="col-sm-12">
-    <button class="btn btn-success sm-auto comprarButton" type="button" data-toggle="modal" data-target="#comprarModal">Comprar</button>
+    <button class="btn comprarButton bottom-style" type="button" data-toggle="modal"
+    data-target="#comprarModal" >Comprar</button>
     </div>
-=======
-    <div class="container shopping-cart-total d-flex align-items-center">
-                        <h5>&nbsp&nbspTotal</h5>
-                        <p class="ml-4 mb-0 shoppingCartTotal">&nbsp&nbsp$</p>
-    </div>
-    <button class="btn comprarButton bottom-style" type="button" data-toggle="modal" data-target="#comprarModal" onclick="almacenamiento()" style="border: solid 40px #3F3F44;">Comprar</button>
->>>>>>> c09b337c020c69be94ed879d25bbc8e6a08d767c
     </div>
     </div>
     </div>

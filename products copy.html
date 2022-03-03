@@ -39,7 +39,7 @@
     <title>Productos</title>
 </head>
 
-<body>
+<body onload="recuperardatos()">
     <!-- Navbar -->
     <div id="navBar"></div>
     <!-- /Navbar -->
@@ -47,6 +47,7 @@
     <!-- Registro e Inicio de sesion -->
     <div id="modalUser"></div>
     <!-- /Registro e Inicio de sesion -->
+    <div id="modalPago"></div>
 
     <!-- Carrito de compras -->
     <div class ="shoppingCart" id="shoppingCart"></div>
@@ -242,6 +243,10 @@
         <!-- Modal User -->
             <script src="assets/js/modaluser.js"></script>
         <!-- /Modal User -->
+
+        <!-- Modal Pago -->
+        <script src="assets/js/modalPago.js"></script>
+        <!-- /Modal Pago -->
 
         <!-- addItems -->
             <script src="assets/js/additem.js"></script>
