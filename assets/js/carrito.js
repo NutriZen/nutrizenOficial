@@ -94,6 +94,8 @@ function updateShoppingCartTotal() {
   });
   shoppingCartTotal.innerHTML = `$${total.toFixed(2)}`;
 }
+var Producto = JSON.parse(sessionStorage.getItem("Carrito"));
+
 
 
 
@@ -141,6 +143,7 @@ function removeShoppingCartItem(event) {
   const buttonClicked = event.target;
   buttonClicked.closest('.shoppingCartItem').remove();
   updateShoppingCartTotal();
+  //sessionStorage.removeItem('Carrito');
 }
 
 function quantityChanged(event) {
@@ -153,4 +156,35 @@ function comprarButtonClicked() {
   shoppingCartItemsContainer.innerHTML = '';
   updateShoppingCartTotal();
 }
+
+
+
+function recuperardatos(){
+
+if(shoppingCartItemsContainer.textContent != ''){
+
+   extraer();
+ }
+}
+   var nombre = "";
+   var precio = "";
+   var url= "";
+   var cantidad="";
+   
+   
+function extraer(){
+   
+   for (var i = 0; i< Producto.length;i++){
+               
+      nombre = Producto[i].product.Nombre;
+      precio = Producto[i].product.Precio;
+      url= Producto[i].product.Url_Imagen;
+      cantidad=Producto[i].product.Cantidad;
+   
+    
+   
+       addItemToShoppingCart(nombre,url,cantidad,precio)
+     }
+    }
+  
 
