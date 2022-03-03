@@ -9,31 +9,6 @@ function newUser(){
     var pass_01 = document.getElementById("passwordOne").value;
     var pass_02 = document.getElementById("passwordTwo").value;
 
-    /*
-    fetch('../../assets/js/userdb.json')
-    .then((respuesta) => respuesta.json())
-    .then(fakeDatos => {
-        
-        fakeDatos.forEach(element => {
-            if(e_mail == element.email){
-                document.getElementById("messageErrorEmail").innerHTML = `<div style="color: #FF6464;"><span class="icon-notification"></span> Este correo electrónico ya está en uso.</div>`;
-            }
-        });
-    
-    })
-    .catch((err) => console.log(err));
-    */
-
-    /*
-    const userObject(fName, lName, eMail, nPhone, password){
-        this.fName = fName;
-        this.lName = lName;
-        this.eMail = eMail;
-        this.nPhone = nPhone;
-        this.password = password;
-    }
-    */
-
     if(fName.length > 0 && lName.length > 0 && e_mail.length > 0 && numPhone.length > 0 && pass_01.length > 0 && pass_02.length > 0) {
 
         /*
@@ -92,7 +67,6 @@ function newUser(){
 function redirectPage(){
     window.location = "login.html";
 } //redirectPage()
-
 
 
 
