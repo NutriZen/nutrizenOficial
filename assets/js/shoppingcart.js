@@ -33,11 +33,28 @@ document.getElementById("shoppingCart").innerHTML = `
         <p class="ml-2 mb-0 shoppingCartTotal">&nbsp&nbsp$</p>
     </div>
     <div class="row container">
-    <div class="d-flex justify-content-center">
-    <button class="btn comprarButton bottom-style" type="button" data-toggle="modal" data-target="#comprarModal" onclick="almacenamiento()">Comprar</button>
+    <div class="col-sm-12">
+    <button class="btn comprarButton bottom-style" type="button" onclick='alerta();'>Comprar</button>
     </div>
     </div>
     </div>
     </div>
     
 `;
+
+var Producto = JSON.parse(sessionStorage.getItem("Carrito"));
+
+function alerta(){
+    Producto = JSON.parse(sessionStorage.getItem("Carrito"));
+    if(Producto.length!=0){
+        swal("Compra exitosa","gracias por tu compra",{
+            icon: "success",
+            button:false
+        })
+    }else{
+        swal("Error","ingrese productos al carrito",{
+            icon: "warning",
+            button:false
+        })
+    }
+}
