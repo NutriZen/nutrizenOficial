@@ -152,6 +152,50 @@ function getItem(){
         });
     }
 
+
+        const addNewItem = {nombre: name, descripcion: descripcion, url_imagen: img, precio: price}
+
+        fetch('/api/productos/', {
+            method: "POST", // or 'PUT'
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(addNewItem),
+            })
+            .then((response) => response.text())
+            .then((addNewItem) => {
+
+                if(addNewItem == ""){
+                    swal("Producto agregado",{
+                        icon: "success",
+                        button:false
+                    })
+                    setTimeout("redirectPage()", 2000); //Redirecciona la pagina en cierto tiempo / 1 seg = 1000mseg
+                }
+
+                // console.log("Success:", typeof(addNewUser));
+                // console.log("probando" + addNewUser);
+
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+                console.log("")
+            });
+                
+            }else{
+                // alert("Debe llenar todos los campos");
+                swal("Debe llenar todos los campos",{
+                    icon: "error",
+                    button: false,
+                    timer: 2000
+                });
+            }
+}//getItem
+
+function redirectPage(){
+    window.location = "products copy.html";
+} //redirectPage()
+
     /*
     if(name.length > 0 && img.length > 0 && price.length > 0 && descripcion.length > 0) {
         addItem({'name': name,
@@ -164,6 +208,7 @@ function getItem(){
     }
     */
 }
+
 
 var dataBase = [];
 

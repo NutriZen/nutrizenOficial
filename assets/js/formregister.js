@@ -44,7 +44,7 @@ function newUser(){
         ///// El siguiente código agrega un nuevo usuario mediante un POST
         const addNewUser = {first_name: fName, last_name: lName, email: e_mail, phone: numPhone, password: pass_01}
 
-        fetch('http://localhost:8081/api/users/', {
+        fetch('/api/users/', {
             method: "POST", // or 'PUT'
             headers: {
                 "Content-Type": "application/json",
