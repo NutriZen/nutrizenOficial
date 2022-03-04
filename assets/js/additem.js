@@ -152,7 +152,7 @@ function getItem(){
         });
     }
 
-<<<<<<< HEAD
+
         const addNewItem = {nombre: name, descripcion: descripcion, url_imagen: img, precio: price}
 
         fetch('/api/productos/', {
@@ -195,7 +195,7 @@ function getItem(){
 function redirectPage(){
     window.location = "products copy.html";
 } //redirectPage()
-=======
+
     /*
     if(name.length > 0 && img.length > 0 && price.length > 0 && descripcion.length > 0) {
         addItem({'name': name,
@@ -208,7 +208,7 @@ function redirectPage(){
     }
     */
 }
->>>>>>> ad62540dbef7c0d1cf8606f69564c74d0b07c589
+
 
 var dataBase = [];
 

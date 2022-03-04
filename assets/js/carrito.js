@@ -95,7 +95,6 @@ function updateShoppingCartTotal() {
 var Producto = JSON.parse(sessionStorage.getItem("Carrito"));
 
 
-<<<<<<< HEAD
 
 
   const options = {
@@ -137,8 +136,6 @@ var Producto = JSON.parse(sessionStorage.getItem("Carrito"));
 
     })
 
-=======
->>>>>>> ad62540dbef7c0d1cf8606f69564c74d0b07c589
 function removeShoppingCartItem(event) {
   Producto = JSON.parse(sessionStorage.getItem("Carrito"));
   const buttonClicked = event.target;
